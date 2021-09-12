@@ -1,0 +1,67 @@
+$vh100: 100vh;
+$vh10: $vh100 * 0.1;
+$vh20: $vh100 * 0.2;
+$vh30: $vh100 * 0.3;
+$vh40: $vh100 * 0.4;
+$vh45: $vh100 * 0.45;
+$vh50: $vh100 * 0.5;
+$vh60: $vh100 * 0.6;
+$vh70: $vh100 * 0.7;
+$vh80: $vh100 * 0.8;
+$vh90: $vh100 * 0.9;
+
+$utilities: (
+    "width": (
+        property: width,
+        class: w,
+        values: (
+            15: 15%,
+            20: 20%,
+            25: 25%,
+            30: 30%,
+            35: 35%,
+            40: 40%,
+            50: 50%,
+            70: 70%,
+            75: 75%,
+            80: 80%,
+            85: 85%,
+            100: 100%,
+            auto: auto,
+        ),
+    ),
+    "height": (
+        property: height,
+        class: h,
+        values: (
+            15: 15%,
+            25: 25%,
+            30: 30%,
+            50: 50%,
+            75: 75%,
+            100: 100%,
+            auto: auto,
+        ),
+    ),
+    "viewport-height": (
+      property: height,
+      class: vh,
+      values: (
+          40: $vh40,
+          45: $vh45,
+          50: $vh50,
+          60: $vh60,
+          80: $vh80,
+          90: $vh90,
+          100: $vh100,
+        )
+    ),
+    "max-width": (
+      property: max-width,
+      class: mw,
+      values: (
+          20: 20%,
+          100: 100%
+          )
+    ),
+);

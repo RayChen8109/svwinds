@@ -1,0 +1,16 @@
+@import "~bootstrap/scss/functions";
+
+@import "./sizing.scss";
+@import url("https://fonts.googleapis.com/earlyaccess/notosanstc.css");
+
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/utilities/api";
+
+
+
+body 
+{ 
+    font-family: 'Noto Sans TC'!important;
+}
