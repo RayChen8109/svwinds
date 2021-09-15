@@ -25,9 +25,10 @@
           <div class="col-lg-6 col-md-12 offset-lg-3">
             <ul class="nav d-flex justify-content-around">
               <li class="nav-item">
-                <router-link class="nav-link link-underscore" :to="'/' + appPath.home">首頁</router-link>
+                <router-link class="nav-link link-underscore active" :to="'/' + appPath.home">首頁</router-link>
               </li>
               <li class="nav-item">
+                <!-- <router-link class="nav-link link-underscore" :to="'/' + appPath.introduceband">關於樂團</router-link> -->
                 <div class="nav-link my-dropdown link-underscore">
                   <span>關於樂團</span>
                   <div class="my-dropdown-content">
@@ -131,6 +132,7 @@ $stretchHeight: 6rem;
   position: relative;
   display: inline-block;
   overflow: visible;
+  z-index: 10;
 }
 
 .my-dropdown-content {
@@ -139,7 +141,6 @@ $stretchHeight: 6rem;
   position: absolute;
   background-color: rgb(245, 245, 245);
   min-width: 10rem;
-  z-index: 1;
   transform: scaleY(0) translateX(-30%);
   transform-origin: top;
   transition: transform 0.2s ease;
@@ -202,7 +203,7 @@ $stretchHeight: 6rem;
   position: absolute;
   width: 100%;
   transform: scaleX(0);
-  height: 0.1rem;
+  height: 0.15rem;
   bottom: 0;
   left: 0;
   background-color: #ffcc47;
@@ -211,6 +212,11 @@ $stretchHeight: 6rem;
 }
 
 .link-underscore:hover:after {
+  transform: scaleX(1);
+  transform-origin: center;
+}
+
+.link-underscore:after .active {
   transform: scaleX(1);
   transform-origin: center;
 }
