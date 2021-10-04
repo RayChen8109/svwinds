@@ -6,8 +6,22 @@
       </blockquote>
       <div class="col-12 my-4 d-flex justify-content-center">
         <div class="d-flex justify-content-evenly w-50">
-          <div class="year-selector-box" v-for="(item, index) in allYears" :key="index" @click="selectYear(item)">
-            <a class="year-selector d-flex justify-content-center align-items-center" href="javascript:;" :class="{ ' year-selector-active': selectorBtn === 'btn' + item }">
+          <div
+            class="year-selector-box"
+            v-for="(item, index) in allYears"
+            :key="index"
+            @click="selectYear(item)"
+          >
+            <a
+              class="
+                year-selector
+                d-flex
+                justify-content-center
+                align-items-center
+              "
+              href="javascript:;"
+              :class="{ ' year-selector-active': selectorBtn === 'btn' + item }"
+            >
               {{ item }}
             </a>
           </div>
@@ -16,9 +30,20 @@
       <hr />
       <div class="col-12 d-flex justify-content-center">
         <div class="row">
-          <div class="w-100 col-12" v-for="(item, index) in shownPerformanceInfo" :key="index">
+          <div
+            class="w-100 col-12"
+            v-for="(item, index) in shownPerformanceInfo"
+            :key="index"
+          >
             <div class="row">
-              <div class="col-lg-3 col-md-4 d-flex justify-content-center align-items-center">
+              <div
+                class="
+                  col-lg-3 col-md-4
+                  d-flex
+                  justify-content-center
+                  align-items-center
+                "
+              >
                 <img class="poster" :src="item.image" alt="" />
               </div>
               <div class="col-lg-9 col-md-8 mt-md-0 mt-4 mb-md-0 mb-4">
@@ -73,7 +98,9 @@ export default {
   methods: {
     selectYear(year) {
       this.selectorBtn = "btn" + year;
-      this.shownPerformanceInfo = data.performanceInfo.filter((x) => new Date(x.time).getFullYear() === year);
+      this.shownPerformanceInfo = data.performanceInfo.filter(
+        (x) => new Date(x.time).getFullYear() === year
+      );
     },
   },
   mounted() {
@@ -81,10 +108,14 @@ export default {
     this.data.performanceInfo.forEach((item) => {
       this.allYears.push(new Date(item.time).getFullYear());
     });
-    this.allYears = this.allYears.filter((v, i, a) => a.indexOf(v) === i).reverse();
+    this.allYears = this.allYears
+      .filter((v, i, a) => a.indexOf(v) === i)
+      .reverse();
     let biggestYear = Math.max(...this.allYears);
     this.selectorBtn = "btn" + biggestYear;
-    this.shownPerformanceInfo = data.performanceInfo.filter((x) => new Date(x.time).getFullYear() === biggestYear);
+    this.shownPerformanceInfo = data.performanceInfo.filter(
+      (x) => new Date(x.time).getFullYear() === biggestYear
+    );
   },
 };
 </script>

@@ -4,7 +4,10 @@
       <blockquote class="mt-4">
         <h4>招聲訊息</h4>
       </blockquote>
-      <DataTable :parentData="recruitData" v-if="this.$route.query.id === undefined"></DataTable>
+      <DataTable
+        :parentData="recruitData"
+        v-if="this.$route.query.id === undefined"
+      ></DataTable>
       <TableContent v-else></TableContent>
     </div>
   </div>
@@ -15,7 +18,7 @@ import { data } from "../util/data/data";
 export default {
   data() {
     return {
-      recruitData: data.recruitMsgData
+      recruitData: data.recruitMsgData,
     };
   },
 };

@@ -13,7 +13,15 @@
           </tr>
         </thead>
         <tbody>
-          <tr class="table-content" v-for="(item, index) in parentData.slice(pageStart, pageStart + offset)" :key="index" @click="intoContent(item)">
+          <tr
+            class="table-content"
+            v-for="(item, index) in parentData.slice(
+              pageStart,
+              pageStart + offset
+            )"
+            :key="index"
+            @click="intoContent(item)"
+          >
             <td>
               <div class="my-2">
                 {{ item.title }}
@@ -32,15 +40,29 @@
     <div class="d-flex justify-content-center mt-3">
       <nav aria-label="Page navigation example">
         <ul class="pagination">
-          <li class="page-item mx-2" :class="['page-item', { disabled: currentPage === 1 }]" @click.prevent="setPage(currentPage - 1)">
+          <li
+            class="page-item mx-2"
+            :class="['page-item', { disabled: currentPage === 1 }]"
+            @click.prevent="setPage(currentPage - 1)"
+          >
             <a class="page-link page-arrow" href="#" aria-label="Previous">
               <i class="bi bi-chevron-left"></i>
             </a>
           </li>
-          <li class="page-item mx-2" v-for="(item, index) in totalPage" :key="index" :class="['page-item', { active: currentPage === item }]" @click.prevent="setPage(item)">
+          <li
+            class="page-item mx-2"
+            v-for="(item, index) in totalPage"
+            :key="index"
+            :class="['page-item', { active: currentPage === item }]"
+            @click.prevent="setPage(item)"
+          >
             <a class="page-link" href="javascript:;">{{ item }}</a>
           </li>
-          <li class="page-item mx-2" :class="['page-item', { disabled: currentPage === totalPage }]" @click.prevent="setPage(currentPage + 1)">
+          <li
+            class="page-item mx-2"
+            :class="['page-item', { disabled: currentPage === totalPage }]"
+            @click.prevent="setPage(currentPage + 1)"
+          >
             <a class="page-link page-arrow" href="#" aria-label="Next">
               <i class="bi bi-chevron-right"></i>
             </a>
@@ -75,8 +97,7 @@ export default {
     intoContent(item) {
       if (this.$route.path.includes("recruit")) {
         this.$router.push({ path: appPath.recruit, query: { id: item.id } });
-      }
-      else {
+      } else {
         this.$router.push({ path: appPath.news, query: { id: item.id } });
       }
       // this.$router.push({ name: "newscontent", params: { id: idx } });

@@ -4,7 +4,10 @@
       <blockquote class="mt-4">
         <h4>最新消息</h4>
       </blockquote>
-      <DataTable :parentData="newsData" v-if="this.$route.query.id === undefined"></DataTable>
+      <DataTable
+        :parentData="newsData"
+        v-if="this.$route.query.id === undefined"
+      ></DataTable>
       <TableContent v-else></TableContent>
     </div>
   </div>

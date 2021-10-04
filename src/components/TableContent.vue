@@ -10,7 +10,14 @@
     </div>
     <div class="col-12">
       <div class="row">
-        <div class="col img-panel" v-for="(path, index) in shownMsg.image" :key="index" data-bs-toggle="modal" data-bs-target="#imageModal" @click="image_zoomin(path)">
+        <div
+          class="col img-panel"
+          v-for="(path, index) in shownMsg.image"
+          :key="index"
+          data-bs-toggle="modal"
+          data-bs-target="#imageModal"
+          @click="image_zoomin(path)"
+        >
           <img class="content-img" :src="path" alt="" />
           <div class="middle">
             <i class="bi bi-search"></i>
@@ -20,13 +27,30 @@
     </div>
   </div>
   <div class="d-flex justify-content-center mt-5">
-    <div class="back-to-list d-flex justify-content-center align-items-center" type="button" @click="$router.go(-1)">回上一頁</div>
+    <div
+      class="back-to-list d-flex justify-content-center align-items-center"
+      type="button"
+      @click="$router.go(-1)"
+    >
+      回上一頁
+    </div>
   </div>
-  <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div
+    class="modal fade"
+    id="imageModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
         </div>
         <div class="modal-body">
           <img class="modal-img" :src="zoomInImgPath" alt="" />

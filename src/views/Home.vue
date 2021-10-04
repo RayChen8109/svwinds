@@ -4,7 +4,11 @@
   <div class="container-fluid">
     <div class="row mt-4">
       <div class="d-flex justify-content-center">
-        <div class="carousel slide carousel-top pe-0" id="carousel" data-bs-ride="carousel">
+        <div
+          class="carousel slide carousel-top pe-0"
+          id="carousel"
+          data-bs-ride="carousel"
+        >
           <div class="carousel-indicators">
             <button
               type="button"
@@ -18,15 +22,30 @@
             ></button>
           </div>
           <div class="carousel-inner">
-            <div class="carousel-item" v-for="(item, index) in data.carouselData" :key="index" :class="{ active: index === 0 }">
+            <div
+              class="carousel-item"
+              v-for="(item, index) in data.carouselData"
+              :key="index"
+              :class="{ active: index === 0 }"
+            >
               <img :src="item.image" class="d-block w-100" alt="pic" />
             </div>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carousel"
+            data-bs-slide="prev"
+          >
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
           </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carousel"
+            data-bs-slide="next"
+          >
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
@@ -34,15 +53,28 @@
       </div>
       <div class="col-12 mt-5">
         <div class="row">
-          <div class="col-lg-6 col-12 d-flex justify-content-lg-end justify-content-center">
+          <div
+            class="
+              col-lg-6 col-12
+              d-flex
+              justify-content-lg-end justify-content-center
+            "
+          >
             <div class="card border-0 card-news">
               <div class="card-body">
                 <blockquote>
                   <h4 class="card-title">最新消息</h4>
                 </blockquote>
                 <div class="row">
-                  <div class="col-12 border-bottom" v-for="(item, index) in data.newsMsgData.slice(0, 5)" :key="index">
-                    <router-link class="card-font-size" :to="{ path: appPath.news, query: { id: item.id } }">
+                  <div
+                    class="col-12 border-bottom"
+                    v-for="(item, index) in data.newsMsgData.slice(0, 5)"
+                    :key="index"
+                  >
+                    <router-link
+                      class="card-font-size"
+                      :to="{ path: appPath.news, query: { id: item.id } }"
+                    >
                       <div class="row my-2">
                         <div class="col-9 d-flex align-items-center">
                           <div class="text-truncate">{{ item.title }}</div>
@@ -63,15 +95,28 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-6 col-12 d-flex justify-content-lg-start justify-content-center">
+          <div
+            class="
+              col-lg-6 col-12
+              d-flex
+              justify-content-lg-start justify-content-center
+            "
+          >
             <div class="card border-0 card-recruit">
               <div class="card-body">
                 <blockquote>
                   <h4 class="card-title">招聲訊息</h4>
                 </blockquote>
                 <div class="row">
-                  <div class="col-12 border-bottom" v-for="(item, index) in data.recruitMsgData.slice(0, 5)" :key="index">
-                    <router-link class="card-font-size" :to="{ path: appPath.recruit, query: { id: item.id } }">
+                  <div
+                    class="col-12 border-bottom"
+                    v-for="(item, index) in data.recruitMsgData.slice(0, 5)"
+                    :key="index"
+                  >
+                    <router-link
+                      class="card-font-size"
+                      :to="{ path: appPath.recruit, query: { id: item.id } }"
+                    >
                       <div class="row my-2">
                         <div class="col-9 d-flex align-items-center">
                           <div class="text-truncate">{{ item.title }}</div>
@@ -97,7 +142,9 @@
       <div class="spacing mt-5">
         <div class="fixed-image"></div>
         <figure>
-          <p>我們用音樂藝術這個能跨越疆界的語言，搭配戲劇文學的自我反照功能，去思索我們一般用文字語言難以觸碰的敏感議題，來建立對話的可能，突破迷思的僵局，面對我們真實的自己。</p>
+          <p>
+            我們用音樂藝術這個能跨越疆界的語言，搭配戲劇文學的自我反照功能，去思索我們一般用文字語言難以觸碰的敏感議題，來建立對話的可能，突破迷思的僵局，面對我們真實的自己。
+          </p>
           <figcaption>
             <p>Jimmy <small>指揮</small></p>
           </figcaption>
@@ -110,7 +157,10 @@
       </div>
       <div class="d-flex justify-content-center my-5">
         <Carousel :settings="settings" :breakpoints="breakpoints">
-          <Slide v-for="(item, index) in data.performanceInfo.slice().reverse()" :key="index">
+          <Slide
+            v-for="(item, index) in data.performanceInfo.slice().reverse()"
+            :key="index"
+          >
             <div class="carousel__item">
               <img class="image" :src="item.image" alt="pic" />
               <p class="title">{{ item.title }}</p>
@@ -274,8 +324,6 @@ export default {
       color: #eba800;
     }
   }
-
-
 }
 
 blockquote {
