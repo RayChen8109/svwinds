@@ -1,4 +1,5 @@
 $vh100: 100vh;
+$vh5: $vh100 * 0.05;
 $vh10: $vh100 * 0.1;
 $vh20: $vh100 * 0.2;
 $vh25: $vh100 * 0.25;
@@ -48,6 +49,8 @@ $utilities: (
         property: height,
         class: vh,
         values: (
+            5: $vh5,
+            10: $vh10,
             25: $vh25,
             30: $vh30,
             40: $vh40,

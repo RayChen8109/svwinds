@@ -42,19 +42,22 @@
                 </blockquote>
                 <div class="row">
                   <div class="col-12 border-bottom" v-for="(item, index) in data.newsMsgData.slice(0, 5)" :key="index">
-                    <div class="row my-2 card-font-size">
-                      <div class="col-9 d-flex align-items-center">
-                        <div class="text-truncate">{{ item.title }}</div>
+                    <router-link class="card-font-size" :to="{ path: appPath.news, query: { id: item.id } }">
+                      <div class="row my-2">
+                        <div class="col-9 d-flex align-items-center">
+                          <div class="text-truncate">{{ item.title }}</div>
+                        </div>
+                        <div class="col-3 d-flex justify-content-end">
+                          <div>{{ item.date }}</div>
+                        </div>
                       </div>
-                      <div class="col-3 d-flex justify-content-end">
-                        <div>{{ item.date }}</div>
-                      </div>
-                    </div>
+                    </router-link>
                   </div>
                   <div class="d-flex justify-content-center mt-3">
-                    <button type="button" class="get-more-btn">
-                      <p>more</p>
-                    </button>
+                    <router-link class="get-more-btn" :to="appPath.news">
+                      <i class="bi bi-chevron-left"></i>
+                      <p class="get-more-text">more</p>
+                    </router-link>
                   </div>
                 </div>
               </div>
@@ -68,19 +71,22 @@
                 </blockquote>
                 <div class="row">
                   <div class="col-12 border-bottom" v-for="(item, index) in data.recruitMsgData.slice(0, 5)" :key="index">
-                    <div class="row my-2 card-font-size">
-                      <div class="col-9 d-flex align-items-center">
-                        <div class="text-truncate">{{ item.title }}</div>
+                    <router-link class="card-font-size" :to="{ path: appPath.recruit, query: { id: item.id } }">
+                      <div class="row my-2">
+                        <div class="col-9 d-flex align-items-center">
+                          <div class="text-truncate">{{ item.title }}</div>
+                        </div>
+                        <div class="col-3 d-flex justify-content-end">
+                          <div>{{ item.date }}</div>
+                        </div>
                       </div>
-                      <div class="col-3 d-flex justify-content-end">
-                        <div>{{ item.date }}</div>
-                      </div>
-                    </div>
+                    </router-link>
                   </div>
                   <div class="d-flex justify-content-center mt-3">
-                    <button type="button" class="get-more-btn">
-                      <p>more</p>
-                    </button>
+                    <router-link class="get-more-btn" :to="appPath.recruit">
+                      <i class="bi bi-chevron-left"></i>
+                      <p class="get-more-text">more</p>
+                    </router-link>
                   </div>
                 </div>
               </div>
@@ -93,7 +99,7 @@
         <figure>
           <p>我們用音樂藝術這個能跨越疆界的語言，搭配戲劇文學的自我反照功能，去思索我們一般用文字語言難以觸碰的敏感議題，來建立對話的可能，突破迷思的僵局，面對我們真實的自己。</p>
           <figcaption>
-            <p>黃子修 <small>指揮</small></p>
+            <p>Jimmy <small>指揮</small></p>
           </figcaption>
         </figure>
       </div>
@@ -156,12 +162,15 @@ export default {
       },
     };
   },
-  methods: {},
+  methods: {
+    scrollPage(e) {
+      console.log(e);
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-
 .carousel__item {
   width: 100%;
   white-space: pre-line;
@@ -253,11 +262,20 @@ export default {
 .card-news,
 .card-recruit {
   width: 90%;
+  text-decoration: none;
   // padding-left: 3%;
 
   & .card-font-size {
     font-size: 0.9rem;
+    color: #000;
+    text-decoration: none;
+
+    &:hover {
+      color: #eba800;
+    }
   }
+
+
 }
 
 blockquote {
@@ -275,10 +293,32 @@ blockquote {
   width: 4rem;
   display: flex;
   justify-content: center;
-  align-self: center;
   border-radius: 1rem;
-  border: 0;
   height: 1.5rem;
+  text-decoration: none;
+
+  .get-more-text {
+    height: 100%;
+    z-index: 3;
+    background-color: #ffcc47;
+    transform: translateX(-20%);
+  }
+
+  .bi-chevron-left {
+    z-index: 1;
+    transform: translateX(100%);
+  }
+}
+
+.get-more-btn:hover .get-more-text {
+  transform: translateX(0%);
+  transition: transform 0.3s ease;
+}
+
+.get-more-btn:hover .bi-chevron-left {
+  display: inline;
+  transform: translateX(-50%);
+  transition: transform 0.3s ease;
 }
 
 .animate__animated.animate__fadeInLeft .animate__animated.animate__fadeInRight {

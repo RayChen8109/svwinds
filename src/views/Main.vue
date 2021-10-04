@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid p-0">
-    <Header class="header1"></Header>
+    <Header></Header>
     <router-view></router-view>
   </div>
   <Footer></Footer>
@@ -12,7 +12,4 @@ export default {};
 
 <style lang="scss">
 @import "../util/styles.scss";
-.header {
-  z-index: 1000;
-}
 </style>
