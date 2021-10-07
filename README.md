@@ -4,7 +4,7 @@
 
 使用Vue3以及Sass/SCSS預處理器開發並實現RWD功能
 
-##路由規劃
+## 路由規劃
 
 ```
 router
@@ -19,7 +19,7 @@ router
     ｜———— recruit
 ```
 
-##Package
+## Package
 
 * vue3-carousel
 * bootstrap
