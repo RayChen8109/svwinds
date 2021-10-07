@@ -6,6 +6,7 @@
 
 ##路由規劃
 
+```
 router
 ｜
 ｜———— main
@@ -16,6 +17,7 @@ router
     ｜———— proformanceinfo
     ｜———— news
     ｜———— recruit
+```
 
 ##Package
 
