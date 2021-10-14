@@ -1,24 +1,26 @@
-# svwinds
+# 齊生管樂團官方網站(僅做為前端練習使用)
 
-## Project setup
+[網站連結](https://richardchen8109.github.io/svwinds/)
+
+使用Vue3以及Sass/SCSS預處理器開發並實現RWD功能
+
+## 路由規劃
+
 ```
-npm install
+router
+｜
+｜———— main
+    ｜
+    ｜———— home
+    ｜———— introduceband
+    ｜———— introduceteam
+    ｜———— proformanceinfo
+    ｜———— news
+    ｜———— recruit
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Package
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+* vue3-carousel
+* bootstrap
+* axios 
