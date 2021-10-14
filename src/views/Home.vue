@@ -369,9 +369,9 @@ blockquote {
   transition: transform 0.3s ease;
 }
 
-.animate__animated.animate__fadeInLeft .animate__animated.animate__fadeInRight {
-  --animate-duration: 1.5s;
-}
+// .animate__animated.animate__fadeInLeft .animate__animated.animate__fadeInRight {
+//   --animate-duration: 1.5s;
+// }
 
 @media screen and (max-width: 992px) {
   .content {

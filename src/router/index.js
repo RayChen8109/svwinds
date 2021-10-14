@@ -31,12 +31,20 @@ const routes = [
         path: appPath.news,
         component: () => import("../views/News.vue"),
       },
+      {
+        path: "/",
+        redirect: "/home",
+      },
       // {
       //   path: appPath.newscontent, /* /newscontent/:id */
       //   name: "newscontent",
       //   component: () => import("../views/TableContent.vue")
       // }
     ],
+  },
+  {
+    path: "/",
+    redirect: "/home",
   },
 ];
 
